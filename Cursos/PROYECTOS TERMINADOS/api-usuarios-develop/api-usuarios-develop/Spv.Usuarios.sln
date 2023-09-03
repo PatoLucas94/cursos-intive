@@ -1,0 +1,159 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Api", "Spv.Usuarios.Api\Spv.Usuarios.Api.csproj", "{8031A9EB-D776-40DB-8B74-93AA712F6E0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Common", "Spv.Usuarios.Common\Spv.Usuarios.Common.csproj", "{C41D72C8-C730-47FB-BC67-659A619288E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.ApiConnect", "Spv.Usuarios.ApiConnect\Spv.Usuarios.ApiConnect.csproj", "{F138B4BA-7F3F-49AB-B4CB-7421A413E7C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.DataAccess.EntityFramework", "Spv.Usuarios.DataAccess.EntityFramework\Spv.Usuarios.DataAccess.EntityFramework.csproj", "{33A1CBF3-9B4A-43BD-A128-55470E5CE320}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.DataAccess.ExternalWebService", "Spv.Usuarios.DataAccess.ExternalWebService\Spv.Usuarios.DataAccess.ExternalWebService.csproj", "{4FAAB9CE-A14F-4BB4-A411-C3C253581230}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.DataAccess.ExternalWebService.Interfaces", "Spv.Usuarios.DataAccess.ExternalWebService.Interfaces\Spv.Usuarios.DataAccess.ExternalWebService.Interfaces.csproj", "{0AF31038-AC41-4DA4-B3AB-F4F70C762895}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Domain", "Spv.Usuarios.Domain\Spv.Usuarios.Domain.csproj", "{21363865-9A48-4A2E-A067-F7D0942E8127}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Service", "Spv.Usuarios.Service\Spv.Usuarios.Service.csproj", "{50DAC1DC-CEBB-4C70-9312-A30C8AF67E53}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Service.Interface", "Spv.Usuarios.Service.Interface\Spv.Usuarios.Service.Interface.csproj", "{B9DEA168-5B68-4C26-9615-C59F5872B022}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.DataAccess.Interface", "Spv.Usuarios.DataAccess.Interface\Spv.Usuarios.DataAccess.Interface.csproj", "{B03E07E4-0E4E-4C5D-BBC1-B77E4B25C813}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Test.Infrastructure", "Spv.Usuarios.Test.Infrastructure\Spv.Usuarios.Test.Infrastructure.csproj", "{582D502B-531C-4F82-80D9-B75A2E9877EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Test.Integration", "Spv.Usuarios.Test.Integration\Spv.Usuarios.Test.Integration.csproj", "{DA313F20-25AC-492C-8FAE-BBAF486742AC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spv.Usuarios.Test.Unit", "Spv.Usuarios.Test.Unit\Spv.Usuarios.Test.Unit.csproj", "{CE5BCCB0-4C58-44B0-9A74-74DFE47C47D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apic-v10", "apic-v10", "{B4262B70-2CF5-4729-8551-7030543F0413}"
+				ProjectSection(SolutionItems) = preProject
+		build.apic\apic-v10\gestion-identidad-api-usuarios.yaml = build.apic\apic-v10\gestion-identidad-api-usuarios.yaml
+				EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apic", "apic", "{A115EDF7-AE5D-456B-838E-A5CA529300B1}"
+	ProjectSection(SolutionItems) = preProject
+		build.apic\apic\gestion-identidad-api-usuarios.yaml = build.apic\apic\gestion-identidad-api-usuarios.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build.config", "build.config", "{5FE14717-71D9-4F36-BD8D-9BDF60E0D331}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{5F43DC52-6B21-4C11-8FCB-150C72AA6F33}"
+	ProjectSection(SolutionItems) = preProject
+		build.config\config\application.yaml = build.config\config\application.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build.migrations", "build.migrations", "{368446EA-0AE5-4A21-944C-CFF5236EAB34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{D919ABFC-761A-47CA-B0E3-9373D48EA501}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migration", "migration", "{9A3C2D40-0EAC-4AC8-AA42-6776B0F50581}"
+	ProjectSection(SolutionItems) = preProject
+		build.migrations\db\migration\V000_00_01__Creacion_tabla_UserStatuses.sql = build.migrations\db\migration\V000_00_01__Creacion_tabla_UserStatuses.sql
+		build.migrations\db\migration\V000_00_02__Creacion_tabla_Users.sql = build.migrations\db\migration\V000_00_02__Creacion_tabla_Users.sql
+		build.migrations\db\migration\V000_00_03__Creacion_tabla_Configurations.sql = build.migrations\db\migration\V000_00_03__Creacion_tabla_Configurations.sql
+		build.migrations\db\migration\V000_00_04__Creacion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_04__Creacion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_05__Creacion_tabla_EventResults.sql = build.migrations\db\migration\V000_00_05__Creacion_tabla_EventResults.sql
+		build.migrations\db\migration\V000_00_06__Creacion_tabla_AuditLogs.sql = build.migrations\db\migration\V000_00_06__Creacion_tabla_AuditLogs.sql
+		build.migrations\db\migration\V000_00_07__Creacion_tabla_UsersPasswordHistory.sql = build.migrations\db\migration\V000_00_07__Creacion_tabla_UsersPasswordHistory.sql
+		build.migrations\db\migration\V000_00_08__Alter_tabla_UsersPasswordHistory.sql = build.migrations\db\migration\V000_00_08__Alter_tabla_UsersPasswordHistory.sql
+		build.migrations\db\migration\V000_00_09__Creacion_tabla_UserUsernameHistory.sql = build.migrations\db\migration\V000_00_09__Creacion_tabla_UserUsernameHistory.sql
+		build.migrations\db\migration\V000_00_10__Alter_tabla_UserPasswordHistory.sql = build.migrations\db\migration\V000_00_10__Alter_tabla_UserPasswordHistory.sql
+		build.migrations\db\migration\V000_00_11__Insercion_tabla_Configurations.sql = build.migrations\db\migration\V000_00_11__Insercion_tabla_Configurations.sql
+		build.migrations\db\migration\V000_00_12__Alter_tabla_Users.sql = build.migrations\db\migration\V000_00_12__Alter_tabla_Users.sql
+		build.migrations\db\migration\V000_00_13__Alter_tabla_Users_PersonId_to_bigint.sql = build.migrations\db\migration\V000_00_13__Alter_tabla_Users_PersonId_to_bigint.sql
+		build.migrations\db\migration\V000_00_14__Insercion_tabla_Configurations.sql = build.migrations\db\migration\V000_00_14__Insercion_tabla_Configurations.sql
+		build.migrations\db\migration\V000_00_15__Insercion_tabla_UserStatuses.sql = build.migrations\db\migration\V000_00_15__Insercion_tabla_UserStatuses.sql
+		build.migrations\db\migration\V000_00_16__Actualizacion_tabla_Configurations.sql = build.migrations\db\migration\V000_00_16__Actualizacion_tabla_Configurations.sql
+		build.migrations\db\migration\V000_00_17__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_17__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_18__Creacion_tabla_Models.sql = build.migrations\db\migration\V000_00_18__Creacion_tabla_Models.sql
+		build.migrations\db\migration\V000_00_19__Creacion_tabla_Inputs.sql = build.migrations\db\migration\V000_00_19__Creacion_tabla_Inputs.sql
+		build.migrations\db\migration\V000_00_20__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_20__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_21__Creacion_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_21__Creacion_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_22__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_22__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_23__Insercion_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_23__Insercion_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_24__Actualizacion_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_24__Actualizacion_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_25__Alter_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_25__Alter_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_26__Actualizacion_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_26__Actualizacion_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_27__Alter_Update_tabla_ValidationRules.sql = build.migrations\db\migration\V000_00_27__Alter_Update_tabla_ValidationRules.sql
+		build.migrations\db\migration\V000_00_28__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_28__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_29__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_29__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_30__Insercion_tabla_EventTypes.sql = build.migrations\db\migration\V000_00_30__Insercion_tabla_EventTypes.sql
+		build.migrations\db\migration\V000_00_31__Creacion_tabla_Cache.sql = build.migrations\db\migration\V000_00_31__Creacion_tabla_Cache.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8031A9EB-D776-40DB-8B74-93AA712F6E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8031A9EB-D776-40DB-8B74-93AA712F6E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8031A9EB-D776-40DB-8B74-93AA712F6E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8031A9EB-D776-40DB-8B74-93AA712F6E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41D72C8-C730-47FB-BC67-659A619288E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41D72C8-C730-47FB-BC67-659A619288E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41D72C8-C730-47FB-BC67-659A619288E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41D72C8-C730-47FB-BC67-659A619288E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F138B4BA-7F3F-49AB-B4CB-7421A413E7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F138B4BA-7F3F-49AB-B4CB-7421A413E7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F138B4BA-7F3F-49AB-B4CB-7421A413E7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F138B4BA-7F3F-49AB-B4CB-7421A413E7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A1CBF3-9B4A-43BD-A128-55470E5CE320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A1CBF3-9B4A-43BD-A128-55470E5CE320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A1CBF3-9B4A-43BD-A128-55470E5CE320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A1CBF3-9B4A-43BD-A128-55470E5CE320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FAAB9CE-A14F-4BB4-A411-C3C253581230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FAAB9CE-A14F-4BB4-A411-C3C253581230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FAAB9CE-A14F-4BB4-A411-C3C253581230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FAAB9CE-A14F-4BB4-A411-C3C253581230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF31038-AC41-4DA4-B3AB-F4F70C762895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF31038-AC41-4DA4-B3AB-F4F70C762895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF31038-AC41-4DA4-B3AB-F4F70C762895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF31038-AC41-4DA4-B3AB-F4F70C762895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21363865-9A48-4A2E-A067-F7D0942E8127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21363865-9A48-4A2E-A067-F7D0942E8127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21363865-9A48-4A2E-A067-F7D0942E8127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21363865-9A48-4A2E-A067-F7D0942E8127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DAC1DC-CEBB-4C70-9312-A30C8AF67E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DAC1DC-CEBB-4C70-9312-A30C8AF67E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DAC1DC-CEBB-4C70-9312-A30C8AF67E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DAC1DC-CEBB-4C70-9312-A30C8AF67E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9DEA168-5B68-4C26-9615-C59F5872B022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DEA168-5B68-4C26-9615-C59F5872B022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DEA168-5B68-4C26-9615-C59F5872B022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DEA168-5B68-4C26-9615-C59F5872B022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B03E07E4-0E4E-4C5D-BBC1-B77E4B25C813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B03E07E4-0E4E-4C5D-BBC1-B77E4B25C813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B03E07E4-0E4E-4C5D-BBC1-B77E4B25C813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B03E07E4-0E4E-4C5D-BBC1-B77E4B25C813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{582D502B-531C-4F82-80D9-B75A2E9877EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{582D502B-531C-4F82-80D9-B75A2E9877EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{582D502B-531C-4F82-80D9-B75A2E9877EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{582D502B-531C-4F82-80D9-B75A2E9877EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA313F20-25AC-492C-8FAE-BBAF486742AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA313F20-25AC-492C-8FAE-BBAF486742AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA313F20-25AC-492C-8FAE-BBAF486742AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA313F20-25AC-492C-8FAE-BBAF486742AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5BCCB0-4C58-44B0-9A74-74DFE47C47D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5BCCB0-4C58-44B0-9A74-74DFE47C47D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5BCCB0-4C58-44B0-9A74-74DFE47C47D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5BCCB0-4C58-44B0-9A74-74DFE47C47D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A115EDF7-AE5D-456B-838E-A5CA529300B1} = {0DEAF0EF-86FA-4EC0-AB96-E130BB294DEE}
+		{5F43DC52-6B21-4C11-8FCB-150C72AA6F33} = {5FE14717-71D9-4F36-BD8D-9BDF60E0D331}
+		{D919ABFC-761A-47CA-B0E3-9373D48EA501} = {368446EA-0AE5-4A21-944C-CFF5236EAB34}
+		{9A3C2D40-0EAC-4AC8-AA42-6776B0F50581} = {D919ABFC-761A-47CA-B0E3-9373D48EA501}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {404E152B-18A0-43D1-9081-3CB8F7D9FBE5}
+	EndGlobalSection
+EndGlobal

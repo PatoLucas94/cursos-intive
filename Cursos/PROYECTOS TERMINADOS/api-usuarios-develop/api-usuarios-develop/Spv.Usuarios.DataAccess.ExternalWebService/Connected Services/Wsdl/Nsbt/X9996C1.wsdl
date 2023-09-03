@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://tempuri.org/action/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdlns="http://tempuri.org/action/" name="X9996C1" targetNamespace="http://tempuri.org/action/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <document>
+    <URL>http://10.238.101.115:9082/bantotal/servlet/HLP_PX9996C1.htm</URL>
+    <line> </line>
+  </document>
+  <types>
+    <xsd:schema xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tempuri.org/action/">
+      <xsd:complexType name="ArrayOfstring_20">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="X9996C1.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Acnco" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dfecl" type="xsd:date" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dhocl" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drqcl" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Bopco" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Cvart" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drqus" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drqws" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddpgc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddsuc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddmod" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddmda" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddpap" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddcta" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddope" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddsbo" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ddtop" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcpgc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcsuc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcmod" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcmda" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcpap" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dccta" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcope" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcsbo" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dctop" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dimpo" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dimp2" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dmdao" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dcotz" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Edatos" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Etdats" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Evalcs" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Evalls" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ecantlin" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Hashreq" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drpgc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drsuc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drmod" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drtrn" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drrel" type="xsd:short" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="X9996C1.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Edatos" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Etdats" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Evalcs" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Evalls" type="wsdlns:ArrayOfstring_20" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Ecantlin" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dfesv" type="xsd:date" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Dhosv" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drqsv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Grsco" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drpgc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drsuc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drmod" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drtrn" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drrel" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drmnc" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drsdo" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Drsdd" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Xml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="X9996C1.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:X9996C1.Execute" />
+  </message>
+  <message name="X9996C1.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:X9996C1.ExecuteResponse" />
+  </message>
+  <portType name="X9996C1SoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:X9996C1.ExecuteSoapIn" />
+      <output message="wsdlns:X9996C1.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="X9996C1SoapBinding" type="wsdlns:X9996C1SoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="http://tempuri.org/action/action/AX9996C1.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="X9996C1">
+    <port name="X9996C1SoapPort" binding="wsdlns:X9996C1SoapBinding">
+      <soap:address location="http://10.238.101.115:9082/bantotal/servlet/com.dlya.bantotal.ax9996c1" />
+    </port>
+  </service>
+</definitions>

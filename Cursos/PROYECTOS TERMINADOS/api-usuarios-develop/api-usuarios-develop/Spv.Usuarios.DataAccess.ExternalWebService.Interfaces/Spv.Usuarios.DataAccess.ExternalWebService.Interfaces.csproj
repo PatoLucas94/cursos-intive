@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{0af31038-ac41-4da4-b3ab-f4f70c762895}</ProjectGuid>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spv.Usuarios.Common\Spv.Usuarios.Common.csproj" />
+  </ItemGroup>
+
+</Project>

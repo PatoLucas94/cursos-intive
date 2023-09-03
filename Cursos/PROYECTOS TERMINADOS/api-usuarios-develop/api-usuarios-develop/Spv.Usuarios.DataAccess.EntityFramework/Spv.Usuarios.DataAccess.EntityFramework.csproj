@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{33a1cbf3-9b4a-43bd-a128-55470e5ce320}</ProjectGuid>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spv.Usuarios.Common\Spv.Usuarios.Common.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.Interface\Spv.Usuarios.DataAccess.Interface.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.Domain\Spv.Usuarios.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

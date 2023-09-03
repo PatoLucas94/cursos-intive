@@ -1,0 +1,48 @@
+{{{APIC_SWAGGER_DATA}}}
+basePath: "/soporte-negocio/gestion-identidad/usuarios"
+x-ibm-configuration:
+  enforced: true
+  testable: true
+  phase: "realized"
+  cors:
+    enabled: true
+  assembly:
+    execute:
+    - proxy:
+        title: "proxy"
+        timeout: 60
+        verb: "keep"
+        cache-response: "protocol"
+        cache-ttl: 900
+        version: "1.0.0"
+        target-url: "$(url)$(api.operation.path)"
+    catch: []
+  properties:
+    url:
+      value: ""
+      description: ""
+      encoded: false
+  catalogs:
+    DESA:
+      properties:
+        url: "http://api-usuarios.k8sds.gscorp.ad"
+    TESTING:
+      properties:
+        url: "http://api-usuarios.k8stst.gscorp.ad"
+    PROD:
+      properties:
+        url: "http://api-usuarios.k8s.gscorp.ad"
+schemes:
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+securityDefinitions:
+  clientId:
+    type: "apiKey"
+    description: ""
+    in: "header"
+    name: "X-IBM-Client-Id"
+security:
+- clientId: []

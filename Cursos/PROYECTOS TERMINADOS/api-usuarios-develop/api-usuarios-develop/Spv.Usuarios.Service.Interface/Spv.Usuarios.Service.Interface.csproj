@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{b9dea168-5b68-4c26-9615-c59f5872b022}</ProjectGuid>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spv.Usuarios.Common\Spv.Usuarios.Common.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.Interface\Spv.Usuarios.DataAccess.Interface.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.Domain\Spv.Usuarios.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

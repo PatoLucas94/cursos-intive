@@ -1,0 +1,114 @@
+--- 
+apiVersion: v1
+data: 
+  appsettings.json: |
+      {
+         "AllowedHosts": "*",
+         "UseDistributedMemoryCache": false, 
+         "ConnectionStrings": {
+           "HbiConnection": "Server={{ (ds "properties").CONFIG.DB_SERVER_HBI }};database={{ (ds "properties").CONFIG.DB_NAME_HBI }};uid={{ (ds "properties").CONFIG.DB_USER_HBI }};pwd={{ (ds "properties").SECRET.DB_PASSWORD_HBI }};Trusted_Connection=False;",
+           "CdigConnection": "Server={{ (ds "properties").CONFIG.DB_SERVER }};database={{ (ds "properties").CONFIG.DB_NAME }};uid={{ (ds "properties").CONFIG.DB_USER }};pwd={{ (ds "properties").SECRET.DB_PASSWORD }};Trusted_Connection=False;"
+         },
+         "ApiUsuarios": {
+           "RetoResponseKey": "{{ (ds "properties").SECRET.RetoResponseKey }}",
+           "AllowedChannels": {{ (ds "properties").CONFIG.AllowedChannels }},
+           "BanelcoExchangeKey": "{{ (ds "properties").SECRET.BanelcoExchangeKey }}",
+           "NsbtEncryptionKey": "{{ (ds "properties").SECRET.NsbtEncryptionKey }}",
+           "IbmClientId": "{{ (ds "properties").SECRET.IbmClientId }}",
+           "ContentTypeOptions": "nosniff"
+         },
+         "ApiPersonas": {
+           "Url": "{{ (ds "properties").CONFIG.ApiPersonas_Url }}",
+           "PersonaBasePath": "{{ (ds "properties").CONFIG.PersonaBasePath }}",
+           "PersonaPath": "{{ (ds "properties").CONFIG.PersonaPath }}",
+           "PersonaInfoPath": "{{ (ds "properties").CONFIG.PersonaInfoPath }}",
+           "PersonaFisicaInfoPath": "{{ (ds "properties").CONFIG.PersonaFisicaInfoPath }}"
+         },
+         "NSBT_WS": {
+           "Url": "{{ (ds "properties").CONFIG.NsbtWsUrl }}",
+           "UsersNSBT": "{{ (ds "properties").CONFIG.UsersNsbt }}"
+         },
+         "SSO": {
+           "AuthUrl": "{{ (ds "properties").CONFIG.SSO.AuthUrl }}",
+           "Realm": "{{ (ds "properties").CONFIG.SSO.Realm }}",
+           "ClientId": "{{ (ds "properties").CONFIG.SSO.ClientId }}",
+           "ClientSecret": "{{ (ds "properties").SECRET.SSO.ClientSecret }}",
+           "OpenIdConnectUrl":  "{{ (ds "properties").CONFIG.SSO.OpenIdConnectUrl }}"
+         },
+         "BTA": {
+            "UserPassword": ""{{ (ds "properties").SECRET.SSO.UserPassword }}",
+            "BtaBasePath": "{{ (ds "properties").CONFIG.SSO.BtaBasePath }}",
+            "TokenBtaPath": "{{ (ds "properties").CONFIG.SSO.TokenBtaPath }}",
+            "ObtenerPinPath": "{{ (ds "properties").CONFIG.SSO.ObtenerPinPath }}",
+         },
+         "ApiConnect": {
+           "ApiConnectGeneratedFilePath": "../../../../build.apic/apic/api_sample_1.0.0.yaml",
+           "ApiConnectTemplatePath": "./Resources/api_sample_apic.txt"
+         },
+         "OpenApiInfo": {
+           "Title": "Api Usuarios",
+           "Contact": "CredencialesDigitales@supervielle.com.ar",
+           "TermsOfService": "http://supervielle.com.ar",
+           "IbmName": "api-usuarios"
+         },
+         "HealthChecksUI": {
+           "HealthChecks": [
+           {
+             "Name": "Api Usuarios",
+             "Uri": "http://localhost/health-ui"
+           }
+           ],
+           "EvaluationTimeOnSeconds": 10,
+           "MinimumSecondsBetweenFailureNotifications": 60
+         },
+         "Serilog": {
+           "Using": [ "Serilog.Settings.Configuration", "Serilog.Formatting.Compact" ],
+           "MinimumLevel": {
+             "Default": "{{ (ds "properties").CONFIG.DEFAULT_LOG_LEVEL }}",
+             "Override": {
+               "Microsoft.EntityFrameworkCore": "Warning",
+               "AspNetCore.HealthChecks.UI": "Warning",
+               "HealthChecks": "Warning",
+               "Microsoft": "Warning",
+               "System": "Warning"
+             }
+         },
+         "Filter": [
+           {
+              "Name": "ByExcluding",
+              "Args": {
+                "expression": "RequestPath like '/health%' or RequestPath like '/info'"
+              }
+           }
+         ],
+         "WriteTo": [
+           {
+             "Name": "File",
+             "Args": {
+               "path": "/var/log/app.log",
+               "formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+               "retainedFileCountLimit": 3,
+               "rollOnFileSizeLimit": true,
+               "fileSizeLimitBytes": 500000000 //500mb
+             }
+           },
+           {
+             "Name": "File",
+             "Args": {
+               "path": "log.txt",
+               "rollingInterval": "Day",
+               "retainedFileCountLimit": 30,
+               "rollOnFileSizeLimit": true,
+               "fileSizeLimitBytes": 50000000, //50mb
+               "buffered": false,
+               "outputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {CorrelationId} {Message:lj}{NewLine}{Exception}"
+             }
+           }
+         ]
+       }
+      }
+kind: ConfigMap
+metadata:
+   creationTimestamp: null
+   name: {{ (ds "properties").APP_NAME }}-cm
+   namespace: {{ (ds "properties").NAMESPACE }}

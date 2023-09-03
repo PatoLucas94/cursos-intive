@@ -1,0 +1,78 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>014753c7-30f6-4ef3-b007-aa1f51f87da6</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <ProjectGuid>8031a9eb-d776-40db-8b74-93aa712f6e0b</ProjectGuid>
+    <SonarQubeTestProject>false</SonarQubeTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Spv.Usuarios.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AutoMapper\**" />
+    <Compile Remove="Logs\**" />
+    <Content Remove="AutoMapper\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="AutoMapper\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="AutoMapper\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\VERSION" Link="VERSION">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="3.1.2" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Correlate.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="3.1.32" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.1.7" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="1.3.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Polly" Version="7.2.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
+    <PackageReference Include="Serilog.Exceptions" Version="5.6.0" />
+    <PackageReference Include="Serilog.Expressions" Version="1.1.1" />
+    <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.5.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Spv.Usuarios.Common\Spv.Usuarios.Common.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.EntityFramework\Spv.Usuarios.DataAccess.EntityFramework.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.ExternalWebService.Interfaces\Spv.Usuarios.DataAccess.ExternalWebService.Interfaces.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.ExternalWebService\Spv.Usuarios.DataAccess.ExternalWebService.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.DataAccess.Interface\Spv.Usuarios.DataAccess.Interface.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.Domain\Spv.Usuarios.Domain.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.Service.Interface\Spv.Usuarios.Service.Interface.csproj" />
+    <ProjectReference Include="..\Spv.Usuarios.Service\Spv.Usuarios.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Spv.Usuarios.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

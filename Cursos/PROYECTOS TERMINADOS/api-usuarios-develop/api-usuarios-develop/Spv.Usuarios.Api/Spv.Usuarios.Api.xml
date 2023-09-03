@@ -1,0 +1,2214 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spv.Usuarios.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Spv.Usuarios.Api.Clients.HeaderPropagationExtensions">
+            <summary>
+            Extension for Header Propagation Middleware
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Clients.HeaderPropagationExtensions.AddHeaderPropagation(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Spv.Usuarios.Common.Configurations.HeaderPropagationOptions})">
+            <summary>
+            Allows Header propagation for set headers in the configuration
+            </summary>
+            <param name="services"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Clients.HeaderPropagationExtensions.AddHeaderPropagation(Microsoft.Extensions.DependencyInjection.IHttpClientBuilder,System.Action{Spv.Usuarios.Common.Configurations.HeaderPropagationOptions})">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+            <param name="configure"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Clients.HttpClientServiceExtension">
+            <summary>
+            HttpClientService Extension for Service Injection
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Clients.HttpClientServiceExtension.AddHttpClientConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Main Http Configuration Injection
+            </summary>
+            <param name="services"></param>
+            <param name="config"></param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Clients.PollyPolicyBuilder">
+            <summary>
+            Main Polly Policy Builder
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Clients.PollyPolicyBuilder.BuildRetryPolicy">
+            <summary>
+            Retry Policy for general HttpClient usage
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Common.Attributes.DomainCollectionValidationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainCollectionValidationAttribute.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Common.Attributes.DomainCollectionValidationAttribute.CantidadMinima">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Common.Attributes.DomainCollectionValidationAttribute.CantidadMaxima">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainCollectionValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Common.Attributes.DomainValidationAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainValidationAttribute.#ctor(System.Type)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainValidationAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Common.Attributes.DomainValidator`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainValidator`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.DomainValidator`1.Validate(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Common.Attributes.IDomainValidation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Common.Attributes.IDomainValidation.Validate(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.ApiControllerBase`1">
+            <response code="400">BadRequest. El servidor no puede aceptar la solicitud, el cliente debe revisar los argumentos y valores de headers.</response>
+            <response code="500">Internal Server Error. El servidor no puede procesar la solicitud debido a un problema interno.</response>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.Service">
+            <summary>
+            Service
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.Logger">
+            <summary>
+            Logger
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.#ctor(`0,Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            ApiControllerBase
+            </summary>
+            <param name="service"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.#ctor(`0,Microsoft.Extensions.Logging.ILogger{`0},AutoMapper.IMapper)">
+            <summary>
+            ApiControllerBase
+            </summary>
+            <param name="service"></param>
+            <param name="logger"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.ExecuteAsync``3(System.Func{Spv.Usuarios.Domain.Services.IRequestBody{``0},System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``1}}},Spv.Usuarios.Domain.Services.IRequestBody{``0},System.Func{System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``1}},System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``2}}})">
+            <summary>
+            ExecuteAsync
+            </summary>
+            <param name="serviceOperation"></param>
+            <param name="request"></param>
+            <param name="mapper"></param>
+            <typeparam name="TI"></typeparam>
+            <typeparam name="TO"></typeparam>
+            <typeparam name="TR"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.ExecuteAsync``3(System.Func{Spv.Usuarios.Domain.Services.IRequestBody{``0},System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``1}}},Spv.Usuarios.Domain.Services.IRequestBody{``0},System.Func{System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``1}},AutoMapper.IMapper,System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``2}}})">
+            <summary>
+            ExecuteAsync
+            </summary>
+            <param name="serviceOperation"></param>
+            <param name="request"></param>
+            <param name="mapper"></param>
+            <typeparam name="TI"></typeparam>
+            <typeparam name="TO"></typeparam>
+            <typeparam name="TR"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.ApiControllerBase`1.ExecuteAsync``2(System.Func{Spv.Usuarios.Domain.Services.IRequestBody{``0},System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{``1}}},Spv.Usuarios.Domain.Services.IRequestBody{``0})">
+            <summary>
+            ExecuteAsync
+            </summary>
+            <param name="serviceOperation"></param>
+            <param name="request"></param>
+            <typeparam name="TI"></typeparam>
+            <typeparam name="TO"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController">
+            <summary>
+            UsuarioController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController.#ctor(Spv.Usuarios.Service.Interface.IUsuariosService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.IUsuariosService},Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            UsuarioController
+            </summary>
+            <param name="usuarioService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController.Autenticacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest)">
+            <summary>
+            Autenticación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController.Perfil(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequest)">
+            <summary>
+            Perfil
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController.Registracion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest)">
+            <summary>
+            Registración
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v1._0.UsuarioController.ValidacionHbi(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaHbiModelRequest)">
+            <summary>
+            Validación de existencia de nombre de usuario registrado en HBI Legacy
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v2._0.ClaveCanalesController">
+            <summary>
+            ClaveCanalesController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ClaveCanalesController.#ctor(Spv.Usuarios.Service.Interface.IClaveCanalesService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.IClaveCanalesService},Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ClaveCanalesController
+            </summary>
+            <param name="claveCanalesService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ClaveCanalesController.Validacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest)">
+            <summary>
+            Validación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ClaveCanalesController.Inhabilitacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest)">
+            <summary>
+            Inhabilitación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ClaveCanalesController.ObtenerEstado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest)">
+            <summary>
+            Obtener Estado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController">
+            <summary>
+            ConfiguracionesController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController.#ctor(Spv.Usuarios.Service.Interface.IConfiguracionesService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.IConfiguracionesService},Spv.Usuarios.Api.Helpers.IAllowedChannels,AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuracionService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController.TerminosYCondicionesHabilitado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders)">
+            <summary>
+            TerminosYCondicionesHabilitado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController.LoginHabilitado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders)">
+            <summary>
+            LoginHabilitado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController.LoginDefaultMenssage(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders)">
+            <summary>
+            LoginHabilitado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.ConfiguracionesController.LoginMenssage(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders)">
+            <summary>
+            LoginHabilitado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v2._0.DynamicImagesController">
+            <summary>
+            DynamicImagesController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.DynamicImagesController.#ctor(Spv.Usuarios.Service.Interface.IDynamicImagesService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.IDynamicImagesService},Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+             Constructor
+            </summary>
+            <param name="dynamicImagesService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.DynamicImagesController.ObtenerImagesLogin(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders)">
+            <summary>
+            ObtenerImagesLogin
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v2._0.SsoController">
+            <summary>
+            SsoController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.SsoController.#ctor(Spv.Usuarios.Service.Interface.ISsoService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.ISsoService},Spv.Usuarios.Api.Helpers.IAllowedChannels,AutoMapper.IMapper)">
+            <summary>
+            SsoController
+            </summary>
+            <param name="usuarioService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.SsoController.Autenticacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2)">
+            <summary>
+            Autenticación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.SsoController.RefreshAccessToken(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,System.String)">
+            <summary>
+            Obtener nuevo token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.SsoController.VerificarToken(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,System.String)">
+            <summary>
+            VerificarToken
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.SsoController.CerrarSesion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,System.String)">
+            <summary>
+            CerrarSesion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController">
+            <summary>
+            UsuarioController
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.#ctor(Spv.Usuarios.Service.Interface.IUsuariosService,Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Service.Interface.IUsuariosService},Spv.Usuarios.Api.Helpers.IAllowedChannels,AutoMapper.IMapper)">
+            <summary>
+            UsuarioController
+            </summary>
+            <param name="usuarioService"></param>
+            <param name="logger"></param>
+            <param name="allowedChannels"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.Perfil(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequestV2)">
+            <summary>
+            Perfil
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.PerfilMigrado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest)">
+            <summary>
+            Perfil de usuario migrado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.PerfilMigrado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,System.Int64)">
+            <summary>
+            Perfil de usuario migrado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.Autenticacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2)">
+            <summary>
+            Autenticación
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.AutenticacionClaveNumerica(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest)">
+            <summary>
+            Autenticación de clave numérica
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.Validacion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest)">
+            <summary>
+            Validación de existencia de usuario registrado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.ValidacionBta(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest)">
+            <summary>
+            Validación de existencia de usuario registrado con clave BTA
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.Registracion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2)">
+            <summary>
+            Registración de usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.Migracion(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest)">
+            <summary>
+            Migración de usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.CambioDeClave(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2)">
+            <summary>
+            Cambio de Clave de Usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.CambioDeCredenciales(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2)">
+            <summary>
+            Cambio de Credenciales de Usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.CambiarEstado(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioEstadoModelRequest)">
+            <summary>
+            Cambio estados de usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.ActualizarPersonId(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest)">
+            <summary>
+            Actualizar PersonId
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Controllers.v2._0.UsuarioController.ObtenerUsuario(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ObtenerUsuarioModelRequest)">
+            <summary>
+            Validación de existencia de usuario registrado por num. doc y nombre de usuario
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Converters.SnakeCaseNamingPolicy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Converters.SnakeCaseNamingPolicy.ConvertName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Converters.SnakeCaseNamingPolicy.ToSnakeCase(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Exceptions.ApiError">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Exceptions.ApiError.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            ApiError
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ApiError.Code">
+            <summary>
+            Codigo
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ApiError.Title">
+            <summary>
+            Titulo
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ApiError.Source">
+            <summary>
+            Origen
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ApiError.Detail">
+            <summary>
+            Detalle
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ApiError.SpvTrackId">
+            <summary>
+            TrackId
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Exceptions.ErrorDetailModel">
+            <summary>
+            Detalle de error model
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.#ctor">
+            <summary>
+            ErrorDetailModel
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.#ctor(System.String,System.Int32,System.String,System.String,System.Collections.Generic.List{Spv.Usuarios.Api.Exceptions.ApiError})">
+            <summary>
+            ErrorDetailModel
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.State">
+            <summary>
+            Descripción del código de error Http
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.Code">
+            <summary>
+            Codigo HTTP
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.Type">
+            <summary>
+            Tipo de error, valores posibles: negocio|tecnico
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.Detail">
+            <summary>
+            Detalle del error
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Exceptions.ErrorDetailModel.Errors">
+            <summary>
+            Lista de errores
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Exceptions.IInvalidResponseBuilder">
+            <summary>
+            IInvalidResponseBuilder
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Exceptions.IInvalidResponseBuilder.Build(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Build
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Exceptions.InvalidResponseBuilder">
+            <summary>
+            InvalidResponseBuilder
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Exceptions.InvalidResponseBuilder.Build(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Build
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Filters.ExceptionsAttribute">
+            <summary>
+            ExceptionsAttribute
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Filters.ExceptionsAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            OnException
+            </summary>
+            <param name="context"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Filters.HeaderPropagationMessageHandlerBuilderFilter">
+            <summary>
+            HeaderPropagationMessageHandlerBuilderFilter class
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Filters.HeaderPropagationMessageHandlerBuilderFilter.#ctor(Microsoft.Extensions.Options.IOptions{Spv.Usuarios.Common.Configurations.HeaderPropagationOptions},Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            constructor
+            </summary>
+            <param name="options"></param>
+            <param name="contextAccessor"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Filters.HeaderPropagationMessageHandlerBuilderFilter.Configure(System.Action{Microsoft.Extensions.Http.HttpMessageHandlerBuilder})">
+            <summary>
+            Configuration
+            </summary>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Filters.ModelStateValidateAttribute">
+            <summary>
+            ModelStateValidateAttribute
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Filters.ModelStateValidateAttribute.#ctor(Spv.Usuarios.Api.Exceptions.IInvalidResponseBuilder)">
+            <summary>
+            ModelStateValidateAttribute
+            </summary>
+            <param name="invalidResponseBuilder"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Filters.ModelStateValidateAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            OnActionExecuting
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Handlers.HeaderPropagationMessageHandler">
+            <summary>
+            Handler for Header Propagation
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Handlers.HeaderPropagationMessageHandler.#ctor(Spv.Usuarios.Common.Configurations.HeaderPropagationOptions,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            HeaderPropagationMessageHandler
+            </summary>
+            <param name="options"></param>
+            <param name="contextAccessor"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Handlers.HeaderPropagationMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            SendAsync
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Helpers.AllowedChannels">
+            <summary>
+            AllowedChannels
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Helpers.AllowedChannels.#ctor(Microsoft.Extensions.Options.IOptions{Spv.Usuarios.Common.Configurations.ValidChannelsConfigurationOptions},Microsoft.Extensions.Logging.ILogger{Spv.Usuarios.Api.Helpers.AllowedChannels})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="validChannelsConfigurationOptions"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Helpers.AllowedChannels.IsValidChannel(System.String)">
+            <summary>
+            Método que retorna 'true' si el Header X-Canal es valido
+            </summary>
+            <param name="pChannel">X-Canal header</param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Helpers.IAllowedChannels">
+            <summary>
+            IAllowedChannels
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Helpers.IAllowedChannels.IsValidChannel(System.String)">
+            <summary>
+            Método que retorna 'true' si el Header X-Canal es valido
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.MappingProfiles.AppMappingProfile">
+            <summary>
+            Mapping profile
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.MappingProfiles.AppMappingProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddleware">
+            <summary>
+            RequestResponseLoggingMiddleware
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddleware.#ctor(Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            RequestResponseLoggingMiddleware
+            </summary>
+            <param name="loggerFactory"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            InvokeAsync
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddleware.LogResponse(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            LogResponse
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddleware.ReadStreamInChunks(System.IO.Stream)">
+            <summary>
+            ReadStreamInChunks
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddlewareExtensions">
+            <summary>
+            RequestResponseLoggingMiddlewareExtensions
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Middleware.RequestResponseLoggingMiddlewareExtensions.UseRequestResponseLogging(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            UseRequestResponseLogging
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Program.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="provider"></param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Swagger.SwaggerGenSettings">
+            <summary>
+            SwaggerDefaultValues
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Swagger.SwaggerGenSettings.AddSwaggerGenForService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            AddSwaggerGen
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Swagger.SwaggerOperationFilter">
+            <summary>
+            SwaggerOperationFilter
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Swagger.SwaggerOperationFilter.Apply(Microsoft.OpenApi.Models.OpenApiOperation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.Swagger.SwaggerUiSettings">
+            <summary>
+            SwaggerUiSettings Class
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.Swagger.SwaggerUiSettings.SwaggerOptionUi(Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider,Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions)">
+            <summary>
+            Configuración de la UI de swagger
+            </summary>
+            <param name="provider"></param>
+            <param name="options"></param>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest">
+            <summary>
+            Inhabilitación Clave Canales Model
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest.IdTipoDocumento">
+            <summary>
+            Tipo de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest.NumeroDocumento">
+            <summary>
+            Numero de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest.ClaveCanales">
+            <summary>
+            Clave de Canales
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto con clave de canales ofuscada
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.InhabilitacionModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest">
+            <summary>
+            Obtener Estado Clave Canales Model
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest.IdTipoDocumento">
+            <summary>
+            Tipo de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest.NumeroDocumento">
+            <summary>
+            Numero de Documento
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto con clave de canales ofuscada
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ObtenerEstadoModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest">
+            <summary>
+            Validacion Clave Canales Model
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest.IdTipoDocumento">
+            <summary>
+            Tipo de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest.NumeroDocumento">
+            <summary>
+            Numero de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest.ClaveCanales">
+            <summary>
+            Clave de Canales
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto con clave de canales ofuscada
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Input.ValidacionModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.InhabilitacionModelResponse">
+            <summary>
+            InhabilitacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.InhabilitacionModelResponse.#ctor">
+            <summary>
+            Constructor InhabilitacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.InhabilitacionModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ClaveCanalesService.Output.InhabilitacionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ObtenerEstadoModelResponse">
+            <summary>
+            ObtenerEstadoModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ObtenerEstadoModelResponse.#ctor">
+            <summary>
+            Constructor ObtenerEstadoModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ObtenerEstadoModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ClaveCanalesService.Output.EstadoModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ValidacionModelResponse">
+            <summary>
+            ValidacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ValidacionModelResponse.#ctor">
+            <summary>
+            Constructor ValidacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ClaveCanalesController.CommonClaveCanales.Output.ValidacionModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ClaveCanalesService.Output.ValidacionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders">
+            <summary>
+            Api Headers
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders.XCanal">
+            <summary>
+            Canal desde donde se generó la petición.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders.XUsuario">
+            <summary>
+            Usuario que generó la petición.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders.XAplicacion">
+            <summary>
+            Aplicación desde la que se generó la petición.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders.XRequestId">
+            <summary>
+            Identificador único de petición.
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders.ToRequestBody``1(``0,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="body"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay">
+            <summary>
+            ApiHeadersGateWay
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay.XGateway">
+            <summary>
+            Gateway
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay.ToRequestBody``1(``0,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="body"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.LoginHabilitadoModelRequest">
+            <summary>
+            LoginHabilitadoModelRequest
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.LoginHabilitadoModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <param name="headers"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.LoginMessageModelRequest">
+            <summary>
+            LoginMessageModelRequest
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.LoginMessageModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <param name="headers"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.TerminosYCondicionesHabilitadoModelRequest">
+            <summary>
+            TerminosYCondicionesHabilitadoModelRequest
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Input.TerminosYCondicionesHabilitadoModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <param name="headers"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginHabilitadoModelResponse">
+            <summary>
+            LoginHabilitadoModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginHabilitadoModelResponse.Habilitado">
+            <summary>
+            Habilitado
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginHabilitadoModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ConfiguracionesService.Output.LoginHabilitadoModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginMessageModelResponse">
+            <summary>
+            LoginMessageModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginMessageModelResponse.Mensaje">
+            <summary>
+            Mensaje
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.LoginMessageModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ConfiguracionesService.Output.LoginMessageModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.TerminosYCondicionesHabilitadoModelResponse">
+            <summary> 
+            TerminosYCondicionesHabilitadoModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.TerminosYCondicionesHabilitadoModelResponse.Habilitado">
+            <summary>
+            Habilitado
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.ConfiguracionesController.Output.TerminosYCondicionesHabilitadoModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.ConfiguracionesService.Output.TerminosYCondicionesHabilitadoModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Input.ImageLoginModelRequest">
+            <summary>
+            ImageLoginModelRequest
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Input.ImageLoginModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <param name="headers"></param>
+            <param name="allowedChannels"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse">
+            <summary>
+            ImageLoginModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse.Nombre">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse.Orden">
+            <summary>
+            Orden
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse.Imagen">
+            <summary>
+            Imagen
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.DynamicImagesController.Output.ImageLoginModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{System.Collections.Generic.List{Spv.Usuarios.Common.Dtos.DynamicImagesService.Output.ImageOutput}}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse">
+            <summary>
+            TokenModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.#ctor">
+            <summary>
+            Constructor TokenModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.AccessToken">
+            <summary>
+            AccessToken
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.ExpiresIn">
+            <summary>
+            ExpiresIn
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.RefreshExpiresIn">
+            <summary>
+            RefreshExpiresIn
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.RefreshToken">
+            <summary>
+            RefreshToken
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.SSOController.Output.TokenModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.SSORepository.Output.TokenModelOutput}},AutoMapper.IMapper)">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest">
+            <summary>
+            ActualizarPersonIdModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest.NroDocumento">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ActualizarPersonIdModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest">
+            <summary>
+            AutenticacionClaveNumericaModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.NroDocumento">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto clave ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionClaveNumericaModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest">
+            <summary>
+            AutenticacionModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto con usuario y clave ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2">
+            <summary>
+            Autenticacion Model
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2.NumeroDocumento">
+            <summary>
+            Numero de Documento
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2.ToString">
+            <summary>
+            Retorna la representación en json del objeto con usuario y clave ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.AutenticacionModelRequestV2.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2">
+            <summary>
+            Cambio de clave model v2
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2.IdPersona">
+            <summary>
+            Identificador de Persona.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2.NuevaClave">
+            <summary>
+            Nueva Clave
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2.ToString">
+            <summary>
+            Retorna la representación en json del objeto clave ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeClaveModelRequestV2.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2">
+            <summary>
+            Cambio de credenciales model v2
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2.IdPersona">
+            <summary>
+            Identificador de Persona.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2.NuevoUsuario">
+            <summary>
+            Nuevo Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2.NuevaClave">
+            <summary>
+            Nueva Clave
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2.ToString">
+            <summary>
+            Retorna la representación en json del objeto con la NuevaClave y el NuevoUsuario ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioDeCredencialesModelRequestV2.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeadersGateWay,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioEstadoModelRequest">
+            <summary>
+            CambioEstadoModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioEstadoModelRequest.PersonId">
+            <summary>
+            Identificador de la Persona.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioEstadoModelRequest.EstadoId">
+            <summary>
+            Identificador del estado a Ccambiar.
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.CambioEstadoModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest">
+            <summary>
+            Migración model
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest.IdPersona">
+            <summary>
+            Identificador de Persona.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto clave y usuario ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.MigracionModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ObtenerUsuarioModelRequest">
+            <summary>
+            ObtenerUsuarioModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ObtenerUsuarioModelRequest.NroDocumento">
+            <summary>
+            Número de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ObtenerUsuarioModelRequest.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ObtenerUsuarioModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest">
+            <summary>
+            Perfil Migrado
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest.NroDocumento">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilMigradoModelRequest.AddRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels,System.Int64)">
+            <summary>
+            AddRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequest">
+            <summary>
+            Perfil
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequest.Usuario">
+            <summary>
+            Nombre usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequestV2">
+            <summary>
+            Perfil
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequestV2.IdPersona">
+            <summary>
+            Identificador de Api-Personas del usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.PerfilModelRequestV2.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest">
+            <summary>
+            Registración model v1
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.NroCliente">
+            <summary>
+            Número de Cliente
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.IdEstadoUsuario">
+            <summary>
+            Identificador de Estado de Usuario.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Nombre">
+            <summary>
+            Nombre
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Apellido">
+            <summary>
+            Apellido
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.TelefonoLaboral">
+            <summary>
+            Teléfono Laboral
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Celular">
+            <summary>
+            Celular
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.NroDocumento">
+            <summary>
+            Número de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.Cuil">
+            <summary>
+            Cuil
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.ExtractoDeRecibo">
+            <summary>
+            Extracto de Recibo.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.ControlFull">
+            <summary>
+            Control Full.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.IdCompaniaCelular">
+            <summary>
+            Identificador de Compañía de Celular.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.RecibeSms">
+            <summary>
+            Recibe SMS.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.RecibeMail">
+            <summary>
+            Recibe Mail.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.IdPersona">
+            <summary>
+            Identificador de Persona.
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.ToString">
+            <summary>
+            Retorna la representación en json del objeto con clave y usuario ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2">
+            <summary>
+            Registración model v2
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.IdPersona">
+            <summary>
+            Identificador de Persona.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.NroDocumento">
+            <summary>
+            Número de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.Usuario">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.Clave">
+            <summary>
+            Clave
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.ToString">
+            <summary>
+            Retorna la representación en json del objeto clave y usuario ofuscados
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.RegistracionModelRequestV2.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest">
+            <summary>
+            ValidacionExistenciaBtaModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest.NroDocumento">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaBtaModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaHbiModelRequest">
+            <summary>
+            ValidacionExistenciaHbiModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaHbiModelRequest.UserName">
+            <summary>
+            Nombre de Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaHbiModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest">
+            <summary>
+            ValidacionExistenciaModelRequest
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest.IdPais">
+            <summary>
+            Identificador de País.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest.IdTipoDocumento">
+            <summary>
+            Identificador de Tipo de Documento.
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest.NroDocumento">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Input.ValidacionExistenciaModelRequest.ToRequestBody(Spv.Usuarios.Api.ViewModels.CommonController.Input.ApiHeaders,Spv.Usuarios.Api.Helpers.IAllowedChannels)">
+            <summary>
+            ToRequestBody
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ActualizarPersonIdModelResponse">
+            <summary>
+            ActualizarPersonIdModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ActualizarPersonIdModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ActualizarPersonIdModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.ActualizarPersonIdModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse">
+            <summary>
+            AutenticacionClaveNumericaModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse.#ctor">
+            <summary>
+            Constructor AutenticacionClaveNumericaModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse.EstadoPassword">
+            <summary>
+            Estado password toma uno de los siguientes valores: EXP -> expirada nuevo modelo / NEXP -> no expirada / EXPBTA -> expirada BTA
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse.FechaExpiracionPassword">
+            <summary>
+            Fecha de expiración del password
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionClaveNumericaModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.AutenticacionClaveNumericaModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponse">
+            <summary>
+            AutenticacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponse.#ctor">
+            <summary>
+            Constructor AutenticacionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.AutenticacionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponseV2">
+            <summary>
+            AutenticacionModelResponseV2
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponseV2.#ctor">
+            <summary>
+            Constructor AutenticacionModelResponseV2
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponseV2.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.AutenticacionModelResponseV2.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.AutenticacionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeClaveModelResponse">
+            <summary>
+            CambioDeClaveModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeClaveModelResponse.#ctor">
+            <summary>
+            Constructor CambioDeClaveModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeClaveModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.CambioDeClaveModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeCredencialesModelResponse">
+            <summary>
+            CambioDeCredencialesModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeCredencialesModelResponse.#ctor">
+            <summary>
+            Constructor CambioDeCredencialesModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.CambioDeCredencialesModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.CambioDeCredencialesModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.MigracionModelResponse">
+            <summary>
+            MigracionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.MigracionModelResponse.#ctor">
+            <summary>
+            Constructor MigracionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.MigracionModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.MigracionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse">
+            <summary>
+            ObtenerUsuarioModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.#ctor">
+            <summary>
+            Constructor ObtenerUsuarioModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.FirstName">
+            <summary>
+            Nombre 
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.LastName">
+            <summary>
+            Apellido
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.Migrated">
+            <summary>
+            Usuario migrado
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.Identifier">
+            <summary>
+            Identifier
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.Canal">
+            <summary>
+            Canal
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ObtenerUsuarioModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.PerfilModelOutput}},AutoMapper.IMapper)">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse">
+            <summary>
+            PerfilMigradoModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.PersonId">
+            <summary>
+            PersonId
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.DocumentCountryId">
+            <summary>
+            DocumentCountryId
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.DocumentTypeId">
+            <summary>
+            DocumentTypeId
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.DocumentNumber">
+            <summary>
+            DocumentNumber
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.UserStatusId">
+            <summary>
+            UserStatusId
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.LoginAttempts">
+            <summary>
+            LoginAttempts
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.LastPasswordChange">
+            <summary>
+            LastPasswordChange
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.LastLogon">
+            <summary>
+            LastLogon
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.CreatedDate">
+            <summary>
+            CreatedDate
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.PerfilMigradoModelOutput}},AutoMapper.IMapper)">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilMigradoModelResponse.FromListAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.PerfilMigradoModelOutput[]}},AutoMapper.IMapper)">
+            <summary>
+            FromListAsync
+            </summary>
+            <param name="task"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse">
+            <summary>
+            PerfilModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.LastLogon">
+            <summary>
+            Fecha último login
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.UserId">
+            <summary>
+            Id usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.FirstName">
+            <summary>
+            Nombre 
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.LastName">
+            <summary>
+            Apellido
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.PerfilModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2">
+            <summary>
+            PerfilModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.LastLogon">
+            <summary>
+            Fecha último login
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.UserId">
+            <summary>
+            Id usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.DocumentNumber">
+            <summary>
+            Número de Documento
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.FirstName">
+            <summary>
+            Nombre 
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.LastName">
+            <summary>
+            Apellido
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.DocumentType">
+            <summary>
+            DocumentType
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.Gender">
+            <summary>
+            Gender
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.LastPasswordChange">
+            <summary>
+            LastPasswordChange
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.PasswordExpiryDate">
+            <summary>
+            PasswordExpiryDate
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.IsEmployee">
+            <summary>
+            PasswordExpiryDate
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.UserStatusId">
+            <summary>
+            PasswordExpiryDate
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.PerfilModelResponseV2.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.PerfilModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.RegistracionModelResponse">
+            <summary>
+            RegistracionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.RegistracionModelResponse.#ctor">
+            <summary>
+            Constructor RegistracionModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.RegistracionModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.RegistracionModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse">
+            <summary>
+            ValidacionExistenciaBtaModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse.#ctor">
+            <summary>
+            Constructor ValidacionExistenciaBtaModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse.Registrado">
+            <summary>
+            Usuario registrado (BUU | HBI | NO)
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse.ClaveBt">
+            <summary>
+            Usuario tiene clave BT
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaBtaModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.ValidacionExistenciaBtaModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaHbiModelResponse">
+            <summary>
+            ValidacionExistenciaHbiModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaHbiModelResponse.#ctor">
+            <summary>
+            Constructor ValidacionExistenciaHbiModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaHbiModelResponse.ExisteUsuario">
+            <summary>
+            Existe usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaHbiModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.ValidacionExistenciaHbiModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse">
+            <summary>
+            ValidacionExistenciaModelResponse
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.#ctor">
+            <summary>
+            Constructor ValidacionExistenciaModelResponse
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.PersonId">
+            <summary>
+            Id persona
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.Migrated">
+            <summary>
+            Usuario migrado
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.Username">
+            <summary>
+            Usuario
+            </summary>
+        </member>
+        <member name="P:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.UserStatusId">
+            <summary>
+            Id Estado de Usuario
+            </summary>
+        </member>
+        <member name="M:Spv.Usuarios.Api.ViewModels.UsuarioController.CommonUsuario.Output.ValidacionExistenciaModelResponse.FromAsync(System.Threading.Tasks.Task{Spv.Usuarios.Domain.Services.IResponse{Spv.Usuarios.Common.Dtos.UsuariosService.Output.ValidacionExistenciaModelOutput}})">
+            <summary>
+            FromAsync
+            </summary>
+            <param name="task"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
